@@ -163,6 +163,7 @@ $VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
 ```
 
+:red_circle: NEEDS Filled in with Datacenter Values.
 This section describes the location as well as the generic networking settings applied to Nested ESXi VCSA & NSX VMs
 ```console
 $VMDatacenter = "San Jose"
