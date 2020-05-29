@@ -92,8 +92,10 @@ $VCSASSHEnable = "true"
 
 
 ## Applicable to Nested ESXi only
+```
 $VMSSH = "true"
 $VMVMFS = "false"
+```
 
 
 ## Name of new vSphere Datacenter/Cluster when VCSA is deployed
