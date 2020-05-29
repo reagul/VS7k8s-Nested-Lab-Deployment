@@ -15,19 +15,26 @@ $NSXTEdgeOVA = "C:\Users\Administrator\Downloads\nsx-edge-3.0.0.0.0.15946012.ova
 ```
 
 ## Nested ESXi VMs to deploy
+
+```
 $NestedESXiHostnameToIPs = @{
     "pacific-esxi-1" = "192.168.1.10"
     "pacific-esxi-2" = "192.168.1.11"
     "pacific-esxi-3" = "192.168.1.12"
 }
+```
 
 ## Nested ESXi VM Resources
+```
 $NestedESXivCPU = "8"
 $NestedESXivMEM = "24" #GB
 $NestedESXiCachingvDisk = "8" #GB
 $NestedESXiCapacityvDisk = "140" #GB
+```
 
 ## VCSA Deployment Configuration
+
+```
 $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "pacific-vcsa"
 $VCSAIPAddress = "192.168.1.13"
@@ -38,10 +45,12 @@ $VCSASSODomainName = "vsphere.local"
 $VCSASSOPassword = "VMware1!"
 $VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
-
+```
 
 ### Customize these to your DC Settings :o:
 #### General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
+
+```
 $VMDatacenter = "DC242"
 $VMCluster = "cluster242"
 $VMNetwork = "internal-portgroup"
@@ -59,21 +68,28 @@ $VMFolder = "Project-Pacific"
 ## Applicable to Nested ESXi only
 $VMSSH = "true"
 $VMVMFS = "false"
+```
 
 ## Name of new vSphere Datacenter/Cluster when VCSA is deployed
+
+```
 $NewVCDatacenterName = "Pacific-Datacenter"
 $NewVCVSANClusterName = "Workload-Cluster"
 $NewVCVDSName = "Pacific-VDS"
 $NewVCDVPGName = "DVPG-Management Network"
+```
 
 ## Pacific Configuration
+```
 $StoragePolicyName = "pacific-gold-storage-policy"
 $StoragePolicyTagCategory = "pacific-demo-tag-category"
 $StoragePolicyTagName = "pacific-demo-storage"
 $DevOpsUsername = "devops"
 $DevOpsPassword = "VMware1!"
+```
 
 ## NSX-T Configuration
+```
 $NSXLicenseKey = "3N2KN-8EHD1-38970-01CKP-04R6Q"
 $NSXRootPassword = "VMware1!VMware1!"
 $NSXAdminUsername = "admin"
@@ -83,6 +99,8 @@ $NSXAuditPassword = "VMware1!VMware1!"
 $NSXSSHEnable = "true"
 $NSXEnableRootLogin = "true"
 $NSXVTEPNetwork = "internal-VTEP"
+
+```
 
 ## Transport Node Profile
 $TransportNodeProfileName = "Pacific-Host-Transport-Node-Profile"
