@@ -2,6 +2,7 @@
 
 
 ## vCenter Server used to deploy vSphere with Kubernetes Lab
+```
 $VIServer = "10.197.107.35"
 $VIUsername = "administrator@vsphere.local"
 $VIPassword = "VMware1!"
@@ -11,6 +12,7 @@ $NestedESXiApplianceOVA = "F:\Nested_ESXi7.0_Appliance_Template_v1.ova"
 $VCSAInstallerPath = "E:\" { This gets mounted to the local folder. Click on the VMware VCSA iso to mount}
 $NSXTManagerOVA = "F:\nsx-unified-appliance-3.0.0.0.0.15946739.ova"
 $NSXTEdgeOVA = "C:\Users\Administrator\Downloads\nsx-edge-3.0.0.0.0.15946012.ova"
+```
 
 ## Nested ESXi VMs to deploy
 $NestedESXiHostnameToIPs = @{
