@@ -51,20 +51,20 @@ $VCSASSHEnable = "true"
 #### General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
 
 
-$VMDatacenter = "DC242" :small_red_triangle:
-$VMCluster = "cluster242" :small_red_triangle:
-$VMNetwork = "internal-portgroup" :small_red_triangle:
-$VMDatastore = "datastore4" :small_red_triangle:
-$VMNetmask = "255.255.255.0"
+- $VMDatacenter = "DC242" :small_red_triangle:
+- $VMCluster = "cluster242" :small_red_triangle:
+- $VMNetwork = "internal-portgroup" :small_red_triangle:
+- $VMDatastore = "datastore4" :small_red_triangle:
+- $VMNetmask = "255.255.255.0"
 ##$VMGateway = "192.168.1.14" ## #PFsense
-$VMGateway = "192.168.1.1" ## centos -linux router :small_red_triangle:
-$VMDNS = "10.197.107.36" :small_red_triangle:
+- $VMGateway = "192.168.1.1" ## centos -linux router :small_red_triangle:
+- $VMDNS = "10.197.107.36" :small_red_triangle:
 ##$VMDNS = "192.168.1.25"
-$VMNTP = "10.128.152.81" :small_red_triangle:
-$VMPassword = "VMware1!"
-$VMDomain = "lab.local"
-$VMSyslog = "192.168.1.13"
-$VMFolder = "Project-Pacific"
+- $VMNTP = "10.128.152.81" :small_red_triangle:
+- $VMPassword = "VMware1!"
+- $VMDomain = "lab.local"
+- $VMSyslog = "192.168.1.13"
+- $VMFolder = "Project-Pacific"
 --------
 
 ## Applicable to Nested ESXi only
