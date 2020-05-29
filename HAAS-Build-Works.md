@@ -1,5 +1,5 @@
 # Notes on HAAS Build PS1 script
-** Reference the PS1 script HAAS-Build_Works.ps1
+** Reference the PS1 script HAAS-Build_Works.ps1. Use these notes to Customize it.
 
 ## PRE-REQ's
 
@@ -80,7 +80,7 @@ $VCSASSHEnable = "true"
 - $VMNetwork = "internal-portgroup" :small_red_triangle:
 - $VMDatastore = "datastore4" :small_red_triangle:
 - $VMNetmask = "255.255.255.0"
-- $VMGateway = "192.168.1.1" ## Windows or Linux router. make sure its connected to both public and pvt and routes :small_red_triangle:
+- $VMGateway = "192.168.1.1" ** Router. Make sure its connected to both public and pvt and routes :small_red_triangle:
 - $VMDNS = "10.197.107.36" :small_red_triangle:
 - $VMNTP = "10.128.152.81" :small_red_triangle:
 - $VMPassword = "VMware1!"
