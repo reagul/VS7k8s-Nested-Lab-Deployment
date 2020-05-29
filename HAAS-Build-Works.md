@@ -12,7 +12,7 @@
 
 
 ## DNS settings.
-** I used my Windows box with Lab.local domain. Make sure these enteries are present :small_red_triangle:BEFORE you kick off the script. 
+** I used my Windows box with Lab.local domain. Make sure these enteries are present :small_red_triangle:BEFORE you kick off the script.
 
 ![](screenshots/DNS-Entries.png)
 
@@ -129,35 +129,50 @@ $NSXVTEPNetwork = "internal-VTEP"
 ```
 
 ## Transport Node Profile
+```
 $TransportNodeProfileName = "Pacific-Host-Transport-Node-Profile"
+```
 
 ## TEP IP Pool
+```
 $TunnelEndpointName = "TEP-IP-Pool"
 $TunnelEndpointDescription = "Tunnel Endpoint for Transport Nodes"
 $TunnelEndpointIPRangeStart = "172.30.1.10"
 $TunnelEndpointIPRangeEnd = "172.30.1.20"
 $TunnelEndpointCIDR = "172.30.1.0/24"
 $TunnelEndpointGateway = "172.30.1.1"
+```
 
 ## Transport Zones
+```
 $OverlayTransportZoneName = "TZ-Overlay"
 $OverlayTransportZoneHostSwitchName = "nsxswitch"
 $VlanTransportZoneName = "TZ-VLAN"
 $VlanTransportZoneNameHostSwitchName = "edgeswitch"
 
+```
+
 ## Network Segment
+```
 $NetworkSegmentName = "Pacific-Segment"
 $NetworkSegmentVlan = "0"
 
+```
+
 ## T0 Gateway
+```
 $T0GatewayName = "Pacific-T0-Gateway"
+```
 $T0GatewayInterfaceAddress = "192.168.1.14" ## should be a routable address :small_red_triangle:
+```
 $T0GatewayInterfacePrefix = "24"
 $T0GatewayInterfaceStaticRouteName = "Pacific-Static-Route"
 $T0GatewayInterfaceStaticRouteNetwork = "0.0.0.0/0"
 $T0GatewayInterfaceStaticRouteAddress = "192.168.1.1"
+```
 
 ## Uplink Profiles
+```
 $ESXiUplinkProfileName = "ESXi-Host-Uplink-Profile"
 $ESXiUplinkProfilePolicy = "FAILOVER_ORDER"
 $ESXiUplinkName = "uplink1"
@@ -170,25 +185,34 @@ $EdgeUplinkName = "tep-uplink"
 $EdgeUplinkProfileActivepNIC = "fp-eth2"
 $EdgeUplinkProfileTransportVLAN = "0"
 $EdgeUplinkProfileMTU = "1600"
+```
+
 
 ## Edge Cluster
+
+```
 $EdgeClusterName = "Edge-Cluster-01"
+```
 
 ## NSX-T Manager Configurations
+```
 $NSXTMgrDeploymentSize = "small"
 $NSXTMgrvCPU = "6" #override default size
 $NSXTMgrvMEM = "24" #override default size
 $NSXTMgrDisplayName = "pacific-nsx-mgr"
 $NSXTMgrHostname = "pacific-nsx-mgr.lab.local"
 $NSXTMgrIPAddress = "192.168.1.16" :small_red_triangle:
+```
 
 ## NSX-T Edge Configuration
+```
 $NSXTEdgeDeploymentSize = "large"
 $NSXTEdgevCPU = "8" #override default size
 $NSXTEdgevMEM = "32" #override default size
 $NSXTEdgeHostnameToIPs = @{
     "pacific-nsx-edge" = "192.168.1.17" :small_red_triangle:
 }
+```
 
 ## Advanced Configurations
 ## Set to 1 only if you have DNS (forward/reverse) for ESXi hostnames
