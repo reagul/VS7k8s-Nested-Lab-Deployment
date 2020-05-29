@@ -1,6 +1,5 @@
 # Notes on working HAAS Build script
 
-## #Table of Contents
 
 ## vCenter Server used to deploy vSphere with Kubernetes Lab
 $VIServer = "10.197.107.35"
@@ -9,7 +8,7 @@ $VIPassword = "VMware1!"
 
 Full Path to both the Nested ESXi 7.0 VA, Extracted VCSA 7.0 ISO & NSX-T OVAs
 $NestedESXiApplianceOVA = "F:\Nested_ESXi7.0_Appliance_Template_v1.ova"
-$VCSAInstallerPath = "E:\"
+$VCSAInstallerPath = "E:\" { This gets mounted to the local folder. Click on the VMware VCSA iso to mount}
 $NSXTManagerOVA = "F:\nsx-unified-appliance-3.0.0.0.0.15946739.ova"
 $NSXTEdgeOVA = "C:\Users\Administrator\Downloads\nsx-edge-3.0.0.0.0.15946012.ova"
 
@@ -39,6 +38,8 @@ $VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
 
 ## General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
+### Customize these to your DC Settings :o:
+
 $VMDatacenter = "DC242"
 $VMCluster = "cluster242"
 $VMNetwork = "internal-portgroup"
