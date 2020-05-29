@@ -1,10 +1,20 @@
 # Notes on working HAAS Build script
 
-## PREREQs
+## PRE-REQ's
+
+- Jump Box - I used Windows  that was on both Priv and Public networks. The Private Vlan was the one Pacific ws installed into.
+- Router – I used a Windows box as Router / DNS.  We have also tested with PFSense / CentOS as routers.
+- DNS – Local Window with labs.local domain
+- Vcenter
+
 
 ## DNS settings. I used Lab.local as domain.
 ![](screenshots/DNS-Entries.png)
 
+## Topology
+
+![](screenshots/topology.png)
+---
 
 ## vCenter Server used to deploy vSphere with Kubernetes Lab
 
