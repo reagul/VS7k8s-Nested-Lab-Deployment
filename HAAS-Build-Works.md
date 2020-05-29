@@ -30,16 +30,16 @@ $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "pacific-vcsa"
 $VCSAIPAddress = "192.168.1.13"
 $VCSAHostname = "pacific-vcsa.lab.local" #Change to IP if you don't have valid DNS
-#$VCSAHostname = "192.168.1.13"
+
 $VCSAPrefix = "24"
 $VCSASSODomainName = "vsphere.local"
 $VCSASSOPassword = "VMware1!"
 $VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
 
-## General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
-### Customize these to your DC Settings :o:
 
+### Customize these to your DC Settings :o:
+#### General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
 $VMDatacenter = "DC242"
 $VMCluster = "cluster242"
 $VMNetwork = "internal-portgroup"
