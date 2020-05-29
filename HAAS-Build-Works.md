@@ -12,7 +12,7 @@
 
 
 ## DNS settings.
-** I used Lab.local as domain. Make sure these enteries are present BEFORE you kick off the script.
+** I used my Windows box with Lab.local domain. Make sure these enteries are present :small_red_triangle:BEFORE you kick off the script. 
 
 ![](screenshots/DNS-Entries.png)
 
