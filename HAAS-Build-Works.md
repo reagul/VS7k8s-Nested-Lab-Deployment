@@ -1,11 +1,11 @@
 # Notes on HAAS Build PS1 script
-** Reference the PS1 script HAAS-Build_Works.ps1. Use these notes to Customize it.
+** Reference the PS1 script HAAS-Build_Works.ps1. Use these notes to Customize it. :small_red_triangle:
 
 ## PRE-REQ's
 
 - Jump Box - I used Windows  that was on both Priv and Public networks. The Private Vlan was the one Pacific ws installed into.
 - Router – I used a Windows box as Router / DNS.  We have also tested with PFSense / CentOS as routers.
-** Make sure to put a test server on the Public / private VLan to test access ahead of time
+:small_red_triangle: Make sure to put a test server on the Public / private VLan to test access ahead of time
 - DNS – Local Window with labs.local domain
 - Vcenter
 
