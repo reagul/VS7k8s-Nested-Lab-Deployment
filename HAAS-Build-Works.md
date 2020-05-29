@@ -1,8 +1,8 @@
-#Notes on working HAAS Build script
+# Notes on working HAAS Build script
 
-###Table of Contents
+## #Table of Contents
 
-##vCenter Server used to deploy vSphere with Kubernetes Lab
+## vCenter Server used to deploy vSphere with Kubernetes Lab
 $VIServer = "10.197.107.35"
 $VIUsername = "administrator@vsphere.local"
 $VIPassword = "VMware1!"
@@ -13,20 +13,20 @@ $VCSAInstallerPath = "E:\"
 $NSXTManagerOVA = "F:\nsx-unified-appliance-3.0.0.0.0.15946739.ova"
 $NSXTEdgeOVA = "C:\Users\Administrator\Downloads\nsx-edge-3.0.0.0.0.15946012.ova"
 
-##Nested ESXi VMs to deploy
+## Nested ESXi VMs to deploy
 $NestedESXiHostnameToIPs = @{
     "pacific-esxi-1" = "192.168.1.10"
     "pacific-esxi-2" = "192.168.1.11"
     "pacific-esxi-3" = "192.168.1.12"
 }
 
-##Nested ESXi VM Resources
+## Nested ESXi VM Resources
 $NestedESXivCPU = "8"
 $NestedESXivMEM = "24" #GB
 $NestedESXiCachingvDisk = "8" #GB
 $NestedESXiCapacityvDisk = "140" #GB
 
-##VCSA Deployment Configuration
+## VCSA Deployment Configuration
 $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "pacific-vcsa"
 $VCSAIPAddress = "192.168.1.13"
@@ -38,39 +38,39 @@ $VCSASSOPassword = "VMware1!"
 $VCSARootPassword = "VMware1!"
 $VCSASSHEnable = "true"
 
-##General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
+## General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
 $VMDatacenter = "DC242"
 $VMCluster = "cluster242"
 $VMNetwork = "internal-portgroup"
 $VMDatastore = "datastore4"
 $VMNetmask = "255.255.255.0"
-##$VMGateway = "192.168.1.14" ###PFsense
-$VMGateway = "192.168.1.1" ##centos -linux router
+## $VMGateway = "192.168.1.14" ## #PFsense
+$VMGateway = "192.168.1.1" ## centos -linux router
 $VMDNS = "10.197.107.36"
-##$VMDNS = "192.168.1.25"
+## $VMDNS = "192.168.1.25"
 $VMNTP = "10.128.152.81"
 $VMPassword = "VMware1!"
 $VMDomain = "lab.local"
 $VMSyslog = "192.168.1.13"
 $VMFolder = "Project-Pacific"
-##Applicable to Nested ESXi only
+## Applicable to Nested ESXi only
 $VMSSH = "true"
 $VMVMFS = "false"
 
-##Name of new vSphere Datacenter/Cluster when VCSA is deployed
+## Name of new vSphere Datacenter/Cluster when VCSA is deployed
 $NewVCDatacenterName = "Pacific-Datacenter"
 $NewVCVSANClusterName = "Workload-Cluster"
 $NewVCVDSName = "Pacific-VDS"
 $NewVCDVPGName = "DVPG-Management Network"
 
-##Pacific Configuration
+## Pacific Configuration
 $StoragePolicyName = "pacific-gold-storage-policy"
 $StoragePolicyTagCategory = "pacific-demo-tag-category"
 $StoragePolicyTagName = "pacific-demo-storage"
 $DevOpsUsername = "devops"
 $DevOpsPassword = "VMware1!"
 
-##NSX-T Configuration
+## NSX-T Configuration
 $NSXLicenseKey = "3N2KN-8EHD1-38970-01CKP-04R6Q"
 $NSXRootPassword = "VMware1!VMware1!"
 $NSXAdminUsername = "admin"
@@ -81,10 +81,10 @@ $NSXSSHEnable = "true"
 $NSXEnableRootLogin = "true"
 $NSXVTEPNetwork = "internal-VTEP"
 
-##Transport Node Profile
+## Transport Node Profile
 $TransportNodeProfileName = "Pacific-Host-Transport-Node-Profile"
 
-##TEP IP Pool
+## TEP IP Pool
 $TunnelEndpointName = "TEP-IP-Pool"
 $TunnelEndpointDescription = "Tunnel Endpoint for Transport Nodes"
 $TunnelEndpointIPRangeStart = "172.30.1.10"
@@ -92,26 +92,26 @@ $TunnelEndpointIPRangeEnd = "172.30.1.20"
 $TunnelEndpointCIDR = "172.30.1.0/24"
 $TunnelEndpointGateway = "172.30.1.1"
 
-##Transport Zones
+## Transport Zones
 $OverlayTransportZoneName = "TZ-Overlay"
 $OverlayTransportZoneHostSwitchName = "nsxswitch"
 $VlanTransportZoneName = "TZ-VLAN"
 $VlanTransportZoneNameHostSwitchName = "edgeswitch"
 
-##Network Segment
+## Network Segment
 $NetworkSegmentName = "Pacific-Segment"
 $NetworkSegmentVlan = "0"
 
-##T0 Gateway
+## T0 Gateway
 $T0GatewayName = "Pacific-T0-Gateway"
-##$T0GatewayInterfaceAddress = "192.168.1.1" ##should be a routable address
-$T0GatewayInterfaceAddress = "192.168.1.14" ##should be a routable address
+## $T0GatewayInterfaceAddress = "192.168.1.1" ## should be a routable address
+$T0GatewayInterfaceAddress = "192.168.1.14" ## should be a routable address
 $T0GatewayInterfacePrefix = "24"
 $T0GatewayInterfaceStaticRouteName = "Pacific-Static-Route"
 $T0GatewayInterfaceStaticRouteNetwork = "0.0.0.0/0"
 $T0GatewayInterfaceStaticRouteAddress = "192.168.1.1"
 
-##Uplink Profiles
+## Uplink Profiles
 $ESXiUplinkProfileName = "ESXi-Host-Uplink-Profile"
 $ESXiUplinkProfilePolicy = "FAILOVER_ORDER"
 $ESXiUplinkName = "uplink1"
@@ -125,10 +125,10 @@ $EdgeUplinkProfileActivepNIC = "fp-eth2"
 $EdgeUplinkProfileTransportVLAN = "0"
 $EdgeUplinkProfileMTU = "1600"
 
-##Edge Cluster
+## Edge Cluster
 $EdgeClusterName = "Edge-Cluster-01"
 
-##NSX-T Manager Configurations
+## NSX-T Manager Configurations
 $NSXTMgrDeploymentSize = "small"
 $NSXTMgrvCPU = "6" #override default size
 $NSXTMgrvMEM = "24" #override default size
@@ -136,7 +136,7 @@ $NSXTMgrDisplayName = "pacific-nsx-mgr"
 $NSXTMgrHostname = "pacific-nsx-mgr.lab.local"
 $NSXTMgrIPAddress = "192.168.1.16"
 
-##NSX-T Edge Configuration
+## NSX-T Edge Configuration
 $NSXTEdgeDeploymentSize = "large"
 $NSXTEdgevCPU = "8" #override default size
 $NSXTEdgevMEM = "32" #override default size
@@ -144,11 +144,11 @@ $NSXTEdgeHostnameToIPs = @{
     "pacific-nsx-edge" = "192.168.1.17"
 }
 
-##Advanced Configurations
-##Set to 1 only if you have DNS (forward/reverse) for ESXi hostnames
+## Advanced Configurations
+## Set to 1 only if you have DNS (forward/reverse) for ESXi hostnames
 $addHostByDnsName = 1
 
-#####DO NOT EDIT BEYOND HERE ####
+## ## #DO NOT EDIT BEYOND HERE ## ##
 
 $debug = $true
 $verboseLogFile = "pacific-nsxt-external-vghetto-lab-deployment.log"
@@ -331,7 +331,7 @@ if($preCheck -eq 1) {
         exit
     }
 
-    ##pre-check VTEP Network exists
+    ## pre-check VTEP Network exists
     $viConnection = Connect-VIServer $VIServer -User $VIUsername -Password $VIPassword -WarningAction SilentlyContinue
     if(! (Get-VirtualNetwork $NSXVTEPNetwork -ErrorAction 'silentlycontinue')) {
         Write-Host -ForegroundColor Red "`tUnable to locate $NSXVTEPNetwork portgroup, please create this network before continuing ... `n"
@@ -382,7 +382,7 @@ if($confirmDeployment -eq 1) {
     Write-Host -ForegroundColor White $VAppName
 
     Write-Host -ForegroundColor Yellow "`n---- vESXi Configuration ----"
-    Write-Host -NoNewline -ForegroundColor Green "##of Nested ESXi VMs: "
+    Write-Host -NoNewline -ForegroundColor Green "## of Nested ESXi VMs: "
     Write-Host -ForegroundColor White $NestedESXiHostnameToIPs.count
     Write-Host -NoNewline -ForegroundColor Green "vCPU: "
     Write-Host -ForegroundColor White $NestedESXivCPU
@@ -433,7 +433,7 @@ if($confirmDeployment -eq 1) {
         Write-Host -ForegroundColor White $NSXTMgrIPAddress
 
         if($deployNSXEdge -eq 1) {
-            Write-Host -NoNewline -ForegroundColor Green "##of NSX Edge VMs: "
+            Write-Host -NoNewline -ForegroundColor Green "## of NSX Edge VMs: "
             Write-Host -ForegroundColor White $NSXTEdgeHostnameToIPs.count
             Write-Host -NoNewline -ForegroundColor Green "IP Address(s): "
             Write-Host -ForegroundColor White $NSXTEdgeHostnameToIPs.Values
@@ -583,7 +583,7 @@ if($deployNestedESXiVMs -eq 1) {
 }
 
 if($deployNSXManager -eq 1) {
-    ##Deploy NSX Manager
+    ## Deploy NSX Manager
     $nsxMgrOvfConfig = Get-OvfConfiguration $NSXTManagerOVA
     $nsxMgrOvfConfig.DeploymentOption.Value = $NSXTMgrDeploymentSize
     $nsxMgrOvfConfig.NetworkMapping.Network_1.value = $VMNetwork
@@ -693,7 +693,7 @@ if($deployNSXEdge -eq 1) {
         My-Logger "Successfully logged into NSX-T Manager $NSXTMgrHostname  ..."
     }
 
-    ##Retrieve NSX Manager Thumbprint which will be needed later
+    ## Retrieve NSX Manager Thumbprint which will be needed later
     My-Logger "Retrieving NSX Manager Thumbprint ..."
     $nsxMgrID = ((Get-NsxtService -Name "com.vmware.nsx.cluster.nodes").list().results | where {$_.manager_role -ne $null}).id
     $nsxMgrCertThumbprint = (Get-NsxtService -Name "com.vmware.nsx.cluster.nodes").get($nsxMgrID).manager_role.api_listen_addr.certificate_sha256_thumbprint
@@ -710,7 +710,7 @@ if($deployNSXEdge -eq 1) {
     My-Logger "Disconnecting from NSX-T Manager ..."
     Disconnect-NsxtServer -Confirm:$false
 
-    ##Deploy Edges
+    ## Deploy Edges
     $nsxEdgeOvfConfig = Get-OvfConfiguration $NSXTEdgeOVA
     $NSXTEdgeHostnameToIPs.GetEnumerator() | Sort-Object -Property Value | Foreach-Object {
         $VMName = $_.Key
@@ -901,12 +901,12 @@ if($setupNewVC -eq 1) {
         $alarmMgr.ClearTriggeredAlarms($alarmSpec)
     }
 
-    ##Final configure and then exit maintanence mode in case patching was done earlier
+    ## Final configure and then exit maintanence mode in case patching was done earlier
     foreach ($vmhost in Get-Cluster -Server $vc | Get-VMHost) {
-        ##Disable Core Dump Warning
+        ## Disable Core Dump Warning
         Get-AdvancedSetting -Entity $vmhost -Name UserVars.SuppressCoredumpWarning | Set-AdvancedSetting -Value 1 -Confirm:$false | Out-File -Append -LiteralPath $verboseLogFile
 
-        ##Enable vMotion traffic
+        ## Enable vMotion traffic
         $vmhost | Get-VMHostNetworkAdapter -VMKernel | Set-VMHostNetworkAdapter -VMotionEnabled $true -Confirm:$false | Out-File -Append -LiteralPath $verboseLogFile
 
         if($vmhost.ConnectionState -eq "Maintenance") {
@@ -1085,7 +1085,7 @@ if($postDeployNSXConfig -eq 1) {
     if($runTransportNodeProfile) {
         $vc = Connect-VIServer $VCSAIPAddress -User "administrator@$VCSASSODomainName" -Password $VCSASSOPassword -WarningAction SilentlyContinue
 
-        ##Retrieve VDS UUID from vCenter Server
+        ## Retrieve VDS UUID from vCenter Server
         $VDS = (Get-VDSwitch -Server $vc -Name $NewVCVDSName).ExtensionData
         $VDSUuid = $VDS.Uuid
         Disconnect-VIServer $vc -Confirm:$false
@@ -1196,7 +1196,7 @@ if($postDeployNSXConfig -eq 1) {
         $hostswitchProfileSerivce = Get-NsxtService -Name "com.vmware.nsx.host_switch_profiles"
         $transportNodeStateService = Get-NsxtService -Name "com.vmware.nsx.transport_nodes.state"
 
-        ##Retrieve all Edge Host Nodes
+        ## Retrieve all Edge Host Nodes
         $edgeNodes = $transportNodeService.list().results | where {$_.node_deployment_info.resource_type -eq "EdgeNode"}
         $ipPool = (Get-NsxtService -Name "com.vmware.nsx.pools.ip_pools").list().results | where { $_.display_name -eq $TunnelEndpointName }
         $OverlayTZ = (Get-NsxtService -Name "com.vmware.nsx.transport_zones").list().results | where { $_.display_name -eq $OverlayTransportZoneName }
@@ -1330,7 +1330,7 @@ if($postDeployNSXConfig -eq 1) {
                 $count++
             }
         }
-        ##Need to force Policy API sync to ensure Edge Cluster details are available for later use
+        ## Need to force Policy API sync to ensure Edge Cluster details are available for later use
         $reloadOp = (Get-NsxtPolicyService -Name "com.vmware.nsx_policy.infra.sites.enforcement_points").reload("default","default")
         My-Logger "Edge Cluster has been realized"
     }
