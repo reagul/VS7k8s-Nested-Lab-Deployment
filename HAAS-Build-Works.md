@@ -12,7 +12,7 @@
 
 
 ## DNS settings.
-** I used my Windows box with Lab.local domain. Make sure these enteries are present :small_red_triangle:BEFORE you kick off the script.
+** I used my Windows box with Lab.local domain. Make sure these entries are present :small_red_triangle:BEFORE you kick off the script.
 
 ![](screenshots/DNS-Entries.png)
 
@@ -21,7 +21,7 @@
 ![](screenshots/topology.png)
 ---
 
-## vCenter Server used to deploy vSphere with Kubernetes Lab
+## vCenter Server
 
 ** Keep most values same and change where appropriate // shows with red triangles
 
