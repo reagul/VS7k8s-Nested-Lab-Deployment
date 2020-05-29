@@ -219,3 +219,13 @@ $NSXTEdgeHostnameToIPs = @{
 ## Advanced Configurations
 ## Set to 1 only if you have DNS (forward/reverse) for ESXi hostnames
 $addHostByDnsName = 1
+
+## Enable Workload screen values
+
+** SCREEN 1
+
+![](screenshots/enable-screen1.png)
+
+** SCREEN 2
+
+![](screenshots/enable-screen2.png)
