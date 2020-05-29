@@ -23,14 +23,13 @@
 
 ## vCenter Server
 
-** Keep most values same and change where appropriate // shows with red triangles
-
+** Change values // shows with red triangles
 
 - $VIServer = "10.197.107.35" :small_red_triangle:
 - $VIUsername = "administrator@vsphere.local" :small_red_triangle:
 - $VIPassword = "VMware1!" :small_red_triangle:
 
-** Folder Path to  ESXi 7.0 VA, Extracted VCSA 7.0 ISO & NSX-T OVAs
+## ISO bits for ESXi 7.0 VA, Extracted VCSA 7.0 ISO & NSX-T OVAs
 
 - $NestedESXiApplianceOVA = "F:\Nested_ESXi7.0_Appliance_Template_v1.ova"
 - $VCSAInstallerPath = "E:\" { This gets mounted to the local folder. Click on the VMware VCSA iso to mount} :small_red_triangle:
