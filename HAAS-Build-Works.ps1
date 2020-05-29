@@ -1,6 +1,5 @@
 # Author: Ravi Jagannathan
 
-
 # vCenter Server used to deploy vSphere with Kubernetes Lab
 $VIServer = "10.197.107.35"
 $VIUsername = "administrator@vsphere.local"

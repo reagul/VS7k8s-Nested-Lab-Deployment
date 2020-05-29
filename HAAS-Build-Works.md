@@ -1,4 +1,7 @@
-# Author: Ravi Jag
+# vGhetto Automated vSphere with Kubernetes Lab Deployment
+##VS7k8s-Nested-Lab-Deployment
+
+## Table of Contents
 
 # vCenter Server used to deploy vSphere with Kubernetes Lab
 $VIServer = "10.197.107.35"
@@ -19,16 +22,17 @@ $NestedESXiHostnameToIPs = @{
 }
 
 # Nested ESXi VM Resources
-$NestedESXivCPU = "4"
+$NestedESXivCPU = "8"
 $NestedESXivMEM = "24" #GB
 $NestedESXiCachingvDisk = "8" #GB
-$NestedESXiCapacityvDisk = "100" #GB
+$NestedESXiCapacityvDisk = "140" #GB
 
 # VCSA Deployment Configuration
 $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "pacific-vcsa"
 $VCSAIPAddress = "192.168.1.13"
 $VCSAHostname = "pacific-vcsa.lab.local" #Change to IP if you don't have valid DNS
+#$VCSAHostname = "192.168.1.13"
 $VCSAPrefix = "24"
 $VCSASSODomainName = "vsphere.local"
 $VCSASSOPassword = "VMware1!"
@@ -41,8 +45,10 @@ $VMCluster = "cluster242"
 $VMNetwork = "internal-portgroup"
 $VMDatastore = "datastore4"
 $VMNetmask = "255.255.255.0"
-$VMGateway = "192.168.1.1"
+##$VMGateway = "192.168.1.14" ## PFsense
+$VMGateway = "192.168.1.1" ##centos -linux router
 $VMDNS = "10.197.107.36"
+##$VMDNS = "192.168.1.25"
 $VMNTP = "10.128.152.81"
 $VMPassword = "VMware1!"
 $VMDomain = "lab.local"
@@ -99,11 +105,12 @@ $NetworkSegmentVlan = "0"
 
 # T0 Gateway
 $T0GatewayName = "Pacific-T0-Gateway"
+##$T0GatewayInterfaceAddress = "192.168.1.1" # should be a routable address
 $T0GatewayInterfaceAddress = "192.168.1.14" # should be a routable address
 $T0GatewayInterfacePrefix = "24"
 $T0GatewayInterfaceStaticRouteName = "Pacific-Static-Route"
 $T0GatewayInterfaceStaticRouteNetwork = "0.0.0.0/0"
-$T0GatewayInterfaceStaticRouteAddress = "192.168.1.15"
+$T0GatewayInterfaceStaticRouteAddress = "192.168.1.1"
 
 # Uplink Profiles
 $ESXiUplinkProfileName = "ESXi-Host-Uplink-Profile"
