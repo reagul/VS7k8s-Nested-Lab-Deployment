@@ -1,6 +1,6 @@
 # Author: Ravi Jagannathan
 
-# vCenter Server used to deploy vSphere with Kubernetes Lab
+# vCenter Server 
 $VIServer = "10.197.107.35"
 $VIUsername = "administrator@vsphere.local"
 $VIPassword = "VMware1!"
@@ -149,9 +149,9 @@ $addHostByDnsName = 1
 #### DO NOT EDIT BEYOND HERE ####
 
 $debug = $true
-$verboseLogFile = "pacific-nsxt-external-vghetto-lab-deployment.log"
+$verboseLogFile = "pacific-nsxt-external-lab-deployment.log"
 $random_string = -join ((65..90) + (97..122) | Get-Random -Count 8 | % {[char]$_})
-$VAppName = "vGhetto-Nested-Project-Pacific-NSX-T-External-Lab-$random_string"
+$VAppName = "Project-Pacific-Nested-NSX-T-External-Lab-$random_string"
 
 $preCheck = 1
 $confirmDeployment = 1
