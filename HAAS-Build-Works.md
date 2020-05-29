@@ -1,4 +1,5 @@
-# Notes on working HAAS Build script
+# Notes on HAAS Build PS1 script
+** Reference the PS1 script HAAS-Build_Works.ps1
 
 ## PRE-REQ's
 
@@ -8,7 +9,9 @@
 - Vcenter
 
 
-## DNS settings. I used Lab.local as domain.
+
+## DNS settings.
+** I used Lab.local as domain.
 ![](screenshots/DNS-Entries.png)
 
 ## Topology
