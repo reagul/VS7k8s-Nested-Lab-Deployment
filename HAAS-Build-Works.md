@@ -1,16 +1,21 @@
 # Notes on working HAAS Build script
 
+## PREREQs
+
+## DNS settings. I used Lab.local as domain.
+![](screenshots/DNS-Entries.png)
+
 
 ## vCenter Server used to deploy vSphere with Kubernetes Lab
 
-** Keep most values same and change where appropriate
+** Keep most values same and change where appropriate // shows with red triangles
 
 
 - $VIServer = "10.197.107.35" :small_red_triangle:
 - $VIUsername = "administrator@vsphere.local" :small_red_triangle:
 - $VIPassword = "VMware1!" :small_red_triangle:
 
-** Full Path to both the Nested ESXi 7.0 VA, Extracted VCSA 7.0 ISO & NSX-T OVAs
+** Folder Path to  ESXi 7.0 VA, Extracted VCSA 7.0 ISO & NSX-T OVAs
 
 - $NestedESXiApplianceOVA = "F:\Nested_ESXi7.0_Appliance_Template_v1.ova"
 - $VCSAInstallerPath = "E:\" { This gets mounted to the local folder. Click on the VMware VCSA iso to mount} :small_red_triangle:
@@ -43,7 +48,6 @@ $VCSADeploymentSize = "tiny"
 $VCSADisplayName = "pacific-vcsa"
 $VCSAIPAddress = "192.168.1.13"
 $VCSAHostname = "pacific-vcsa.lab.local" #Change to IP if you don't have valid DNS
-
 $VCSAPrefix = "24"
 $VCSASSODomainName = "vsphere.local"
 $VCSASSOPassword = "VMware1!"
