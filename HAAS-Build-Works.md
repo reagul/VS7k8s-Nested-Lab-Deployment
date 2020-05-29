@@ -80,13 +80,11 @@ $VCSASSHEnable = "true"
 - $VMNetwork = "internal-portgroup" :small_red_triangle:
 - $VMDatastore = "datastore4" :small_red_triangle:
 - $VMNetmask = "255.255.255.0"
-##$VMGateway = "192.168.1.14" ## #PFsense
-- $VMGateway = "192.168.1.1" ## Windows or Linux router :small_red_triangle:
+- $VMGateway = "192.168.1.1" ## Windows or Linux router. make sure its connected to both public and pvt and routes :small_red_triangle:
 - $VMDNS = "10.197.107.36" :small_red_triangle:
-##$VMDNS = "192.168.1.25"
 - $VMNTP = "10.128.152.81" :small_red_triangle:
 - $VMPassword = "VMware1!"
-- $VMDomain = "lab.local"
+- $VMDomain = "lab.local" :small_red_triangle:
 - $VMSyslog = "192.168.1.13"
 - $VMFolder = "Project-Pacific"
 --------
@@ -153,8 +151,7 @@ $NetworkSegmentVlan = "0"
 
 ## T0 Gateway
 $T0GatewayName = "Pacific-T0-Gateway"
-## $T0GatewayInterfaceAddress = "192.168.1.1" ## should be a routable address
-$T0GatewayInterfaceAddress = "192.168.1.14" ## should be a routable address
+$T0GatewayInterfaceAddress = "192.168.1.14" ## should be a routable address :small_red_triangle:
 $T0GatewayInterfacePrefix = "24"
 $T0GatewayInterfaceStaticRouteName = "Pacific-Static-Route"
 $T0GatewayInterfaceStaticRouteNetwork = "0.0.0.0/0"
@@ -183,14 +180,14 @@ $NSXTMgrvCPU = "6" #override default size
 $NSXTMgrvMEM = "24" #override default size
 $NSXTMgrDisplayName = "pacific-nsx-mgr"
 $NSXTMgrHostname = "pacific-nsx-mgr.lab.local"
-$NSXTMgrIPAddress = "192.168.1.16"
+$NSXTMgrIPAddress = "192.168.1.16" :small_red_triangle:
 
 ## NSX-T Edge Configuration
 $NSXTEdgeDeploymentSize = "large"
 $NSXTEdgevCPU = "8" #override default size
 $NSXTEdgevMEM = "32" #override default size
 $NSXTEdgeHostnameToIPs = @{
-    "pacific-nsx-edge" = "192.168.1.17"
+    "pacific-nsx-edge" = "192.168.1.17" :small_red_triangle:
 }
 
 ## Advanced Configurations
