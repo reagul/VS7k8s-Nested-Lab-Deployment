@@ -50,7 +50,7 @@ $VCSASSHEnable = "true"
 ### Customize these to your DC Settings :o:
 #### General Deployment Configuration for Nested ESXi, VCSA & NSX VMs
 
-```
+
 $VMDatacenter = "DC242" :small_red_triangle:
 $VMCluster = "cluster242" :small_red_triangle:
 $VMNetwork = "internal-portgroup" :small_red_triangle:
@@ -70,7 +70,7 @@ $VMFolder = "Project-Pacific"
 ## Applicable to Nested ESXi only
 $VMSSH = "true"
 $VMVMFS = "false"
-```
+
 
 ## Name of new vSphere Datacenter/Cluster when VCSA is deployed
 
